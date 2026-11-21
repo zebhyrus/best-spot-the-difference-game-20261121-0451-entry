@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spot It! Cari Perbedaannya</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">
+      <span class="logo">SPOT IT!</span>
+      <span class="tagline">Cari Perbedaannya &mdash; spot the difference</span>
+    </div>
+    <div class="hud" id="hud">
+      <span class="pill" id="hudLevel">Level 1 &middot; Taman Matahari</span>
+      <span class="pill found" id="hudFound">Found 0 / 7 &middot; 7 left</span>
+      <span class="pill timer" id="hudTimer">2:00</span>
+      <span class="pill" id="hudScore">Score 0</span>
+      <span class="pill" id="hudHints">Hints 3</span>
+    </div>
+  </header>
+
+  <main id="boards">
+    <section class="panel" id="panelLeft">
+      <div class="panelLabel"><span class="sideTag">A</span> KIRI &middot; gambar asli</div>
+      <canvas id="canvasLeft" width="560" height="500"></canvas>
+    </section>
+    <section class="panel" id="panelRight">
+      <div class="panelLabel"><span class="sideTag">B</span> KANAN &middot; ada yang beda!</div>
+      <canvas id="canvasRight" width="560" height="500"></canvas>
+    </section>
+  </main>
+
+  <footer id="controls">
+    <button id="btnHint" type="button">Hint (H) &middot; 3 left</button>
+    <button id="btnRestart" type="button">Restart level (R)</button>
+    <button id="btnMenu" type="button">Level select (Esc)</button>
+    <button id="btnSound" type="button">Sound: on (M)</button>
+    <span id="tip">Klik perbedaan di panel mana pun. Klik salah &minus;5 detik. Temukan 7 perbedaan sebelum waktu habis!</span>
+  </footer>
+
+  <div id="overlay" class="overlay"></div>
+</div>
+<script src="./scenes.js"></script>
+<script src="./audio.js"></script>
+<script src="./game.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #14101f; }
+body {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  color: #f5efe0;
+  min-height: 100vh;
+}
+#app { width: 1280px; margin: 0 auto; padding: 10px 16px 12px; }
+#topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 6px 2px 10px;
+}
+.brand { display: flex; align-items: baseline; gap: 12px; }
+.logo {
+  font-size: 34px; font-weight: 900; letter-spacing: 1px; color: #ffd54a;
+  text-shadow: 0 3px 0 #b25a1e, 0 6px 14px rgba(0,0,0,.5);
+}
+.tagline { font-size: 15px; color: #cbbcf5; font-style: italic; }
+.hud { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.pill {
+  background: #2a2140; border: 2px solid #4b3a75; border-radius: 999px;
+  padding: 6px 12px; font-size: 14px; font-weight: 700; white-space: nowrap;
+}
+.pill.found { background: #1e4d2e; border-color: #3fae5f; color: #bff5cf; }
+.pill.timer { background: #4d2a1e; border-color: #e07b39; color: #ffd9b0; }
+.pill.timer.low { background: #6d1420; border-color: #ff5a5a; color: #fff; animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: .55; } }
+#boards { display: flex; gap: 20px; justify-content: center; }
+.panel {
+  background: #241b38; border: 3px solid #5b4a8a; border-radius: 14px;
+  padding: 8px 8px 10px;
+}
+.panelLabel {
+  font-size: 15px; font-weight: 800; letter-spacing: 1px; color: #e8ddff;
+  padding: 2px 6px 8px; text-transform: uppercase;
+}
+.sideTag {
+  display: inline-block; width: 24px; height: 24px; line-height: 24px; text-align: center;
+  border-radius: 50%; background: #ffd54a; color: #241b38; margin-right: 6px;
+}
+.panel canvas { display: block; border-radius: 10px; cursor: crosshair; background: #87bfe8; }
+#boards.shake { animation: shake .3s; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-7px); }
+  75% { transform: translateX(7px); }
+}
+#controls { display: flex; gap: 10px; align-items: center; margin-top: 12px; }
+#controls button {
+  font-family: inherit; font-size: 14px; font-weight: 800; color: #241b38;
+  background: #ffd54a; border: none; border-radius: 999px; padding: 10px 16px;
+  cursor: pointer;
+}
+#controls button:hover { background: #ffe27a; }
+#controls button:disabled { opacity: .45; cursor: default; }
+#controls button.ghost { background: #3a2f5c; color: #f5efe0; border: 2px solid #5b4a8a; }
+#tip { font-size: 13px; color: #b9aede; margin-left: 6px; }
+.overlay {
+  position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
+  background: rgba(12, 8, 24, .72); z-index: 10;
+}
+.overlay.show { display: flex; }
+.card {
+  width: 560px; background: #241b38; border: 3px solid #ffd54a; border-radius: 18px;
+  padding: 28px 32px; text-align: center; box-shadow: 0 18px 50px rgba(0,0,0,.6);
+}
+.card h1 { margin: 0 0 6px; font-size: 34px; color: #ffd54a; }
+.card h2 { margin: 0 0 10px; font-size: 22px; color: #e8ddff; }
+.card p { font-size: 15px; line-height: 1.55; color: #d8cfee; margin: 8px 0; }
+.card .big { font-size: 20px; font-weight: 800; color: #bff5cf; }
+.card .stars { font-size: 34px; letter-spacing: 6px; margin: 6px 0; }
+.levelGrid { display: flex; gap: 10px; justify-content: center; margin: 16px 0 6px; }
+.levelCard {
+  flex: 1; background: #322655; border: 2px solid #5b4a8a; border-radius: 12px;
+  padding: 12px 8px; cursor: pointer; color: #f5efe0; font-family: inherit;
+}
+.levelCard:hover { border-color: #ffd54a; }
+.card button.levelCard { background: #322655; color: #f5efe0; border: 2px solid #5b4a8a; }
+.card button.levelCard:hover { border-color: #ffd54a; background: #3d2f66; }
+.levelCard .num { font-size: 22px; font-weight: 900; color: #ffd54a; display: block; }
+.levelCard .nm { font-size: 14px; font-weight: 800; display: block; margin-top: 2px; }
+.levelCard .df { font-size: 12px; color: #b9aede; display: block; margin-top: 4px; }
+.card button {
+  font-family: inherit; font-size: 16px; font-weight: 800; color: #241b38;
+  background: #ffd54a; border: none; border-radius: 999px; padding: 12px 26px;
+  cursor: pointer; margin: 8px 4px 0;
+}
+.card button:hover { background: #ffe27a; }
+.card button.ghost { background: #3a2f5c; color: #f5efe0; border: 2px solid #5b4a8a; }
+.keys { font-size: 12px; color: #9d8fc9; margin-top: 12px; }
